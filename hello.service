@@ -1,0 +1,15 @@
+[Unit]
+Description="My Express App"
+
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/helloworld.js
+WorkingDirectory=/home/ubuntu
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=MyApp
+Environment=NODE_ENV=production PORT=3000
+
+[Install]
+WantedBy=multi-user.target
